@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="es"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta: {{ start }} a {{ destination }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head><body><main class="card">
+  <p class="eyebrow">Ruta más corta</p><h1>{{ start }} <span aria-hidden="true">→</span> {{ destination }}</h1>
+  <p class="distance">{{ distance }} km</p>
+  <ol class="route">{% for town in route %}<li>{{ town }}</li>{% endfor %}</ol>
+  <a class="back" href="{{ url_for('index') }}">Calcular otra ruta</a>
+</main></body></html>
